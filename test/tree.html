@@ -1,66 +1,24 @@
-# tree-view
-
-
-
-Web component for TreeView implemented with LitElement.
-![alt text](./test/image/Display)
-
-
-## Installation
-
-```shell
-npm i @binar/tree-view-component
-```
-
-Then, import tree-view into your element:
-
-```javascript
-import 'tree-view-component/tree-view.js';
-```
-
-or in an html file:
-
-```html
-<script type="module" src="/path/to/tree-view.js"></script>
-OR 
-
- <script
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script
     type="module"
     src="https://unpkg.com/@binar/tree-view-component"
     ></script>
-```
-
-## Usage
-
-In your LitElement class:
-
-```javascript
-static get styles() {
-  return css`
-    :host {
-      display: block;
-    }
-  `;
-}
-static get properties() {
-  return {};
-}
-
-constructor() {
-  super();
-}
-
-render() {
-  return html`
-    <tree-view id="chart" key="id" value="1" ></tree-view>
-  `;
-}
-
-```
-
-## JS
-
-```js
+    <style>
+      #ChartContainer > google-chart {
+        width: 100%;
+        margin: 50px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <tree-view id="chart" key="id" value="1"></tree-view>
+  </body>
+</html>
+<script>
   var TreeData={
       categories: {
         label: "Categories",
@@ -175,16 +133,5 @@ render() {
     console.log(temp);
   };
 
-```
 
-| properties           | Default value |
-| --------------------- | ------------- |
-| data                  | []
-| key                   | ""          |
-| value                 | ""           |
-
-
-#Events
-| Events                | Default value |
-| --------------------- | ------------- |
-| item-selected         | (param)=>{}
+</script>
