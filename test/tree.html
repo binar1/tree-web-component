@@ -16,6 +16,10 @@
   </head>
   <body>
     <tree-view id="chart" key="id" value="1"></tree-view>
+    <button
+    onclick="CheckId(5)">
+    Sele ID 5
+  </button>
   </body>
 </html>
 <script>
@@ -127,10 +131,21 @@
         },
       }
   }
+ 
+ 
+ function CheckId(id) {
+  let select= document.getElementById('chart');
+  select.setAttribute('value',id)
+ }
+
   window.onload = function (e) {
   let temp= document.getElementById('chart');
     temp.setAttribute('data',JSON.stringify(TreeData))
-    console.log(temp);
+
+    temp.addEventListener('item-selected',function (params) {
+      var value=params.detail.param;
+      console.log(value);
+    })
   };
 
 

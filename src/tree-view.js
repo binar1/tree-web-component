@@ -179,7 +179,6 @@ class Tree extends LitElement {
   }
 
   updated() {
-    console.log(this.data);
     this.replaceData(this.data);
     if (this.value != "") {
       this.select(this.value);
