@@ -14,7 +14,7 @@ npm i @binar/tree-view-component
 Then, import tree-view into your element:
 
 ```javascript
-import 'tree-view/tree-view.js';
+import 'tree-view-component/tree-view.js';
 ```
 
 or in an html file:
