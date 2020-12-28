@@ -1,6 +1,6 @@
 {
   "name": "@binar/tree-view-component",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "Its Tree View Component",
   "main": "./src/tree-view",
   "scripts": {
