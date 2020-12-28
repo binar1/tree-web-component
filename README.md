@@ -21,6 +21,12 @@ or in an html file:
 
 ```html
 <script type="module" src="/path/to/tree-view.js"></script>
+OR 
+
+ <script
+    type="module"
+    src="https://unpkg.com/@binar/tree-view-component"
+    ></script>
 ```
 
 ## Usage
