@@ -3,7 +3,7 @@
 
 
 Web component for TreeView implemented with LitElement.
-![alt text](./test/image/Display)
+![alt text](./test/image/Display.png)
 
 
 ## Installation
