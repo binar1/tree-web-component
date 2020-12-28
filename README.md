@@ -1,10 +1,8 @@
 # tree-view
 
 
-
-Web component for TreeView implemented with LitElement.
 ![alt text](./test/image/Display.png)
-
+Web component for TreeView implemented with LitElement.
 
 ## Installation
 
