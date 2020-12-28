@@ -1,0 +1,29 @@
+{
+  "name": "@binar/tree-view-component",
+  "version": "1.0.16",
+  "description": "Its Tree View Component",
+  "main": "tree-view",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binar1/tree-web-component.git"
+  },
+  "keywords": [
+    "TreeView",
+    "Tree",
+    "webcomponent",
+    "litelement",
+    "polymer"
+  ],
+  "author": "Binar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/binar1/tree-web-component/issues"
+  },
+  "homepage": "https://github.com/binar1/tree-web-component#readme",
+  "dependencies": {
+    "lit-element": "^2.2.0"
+  }
+}
