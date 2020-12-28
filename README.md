@@ -1,27 +1,26 @@
-# lit-toast
+# tree-view
 
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/lit-toast) ![npm](https://img.shields.io/npm/v/lit-toast.svg)
 
-Web component for toasts implemented with LitElement.
 
-[Demo](https://lit-toast-demo.victorbp.site)
+Web component for TreeView implemented with LitElement.
+
 
 ## Installation
 
 ```shell
-npm install lit-toast --save
+npm i @binar/tree-view-component
 ```
 
-Then, import lit-toast into your element:
+Then, import tree-view into your element:
 
 ```javascript
-import 'lit-toast/lit-toast.js';
+import 'tree-view/tree-view.js';
 ```
 
 or in an html file:
 
 ```html
-<script type="module" src="/path/to/lit-toast.js"></script>
+<script type="module" src="/path/to/tree-view.js"></script>
 ```
 
 ## Usage
@@ -46,10 +45,7 @@ constructor() {
 
 render() {
   return html`
-    <button @click="${this._showToast}">
-      Show Toast
-    </button>
-    <lit-toast></lit-toast>
+    <tree-component id="chart" key="id" value="1" ></tree-component>
   `;
 }
 
@@ -60,20 +56,131 @@ _showToast() {
 
 ## Styling
 
-```css
-lit-toast {
-  --lt-border: 2px solid red;
-}
+```js
+  var TreeData={
+      categories: {
+        label: "Categories",
+        id:"1",
+        children: {
+          "patient": {
+            label: "Patients",
+            id:"2",
+            children: {
+              "patient:janeDoe": {
+                label: "Jane Doe",
+                icon: "Woman.png",
+                id:"3",
+                children: {
+                  "jd:plans": {
+                    label: "Plans",
+                    id:"4",
+                    children: {
+                      "plan:JDHI1": {
+                        label: "Health Insurance JDHI1",
+                        icon: "Plan.png",
+                        id:"5"
+                      },
+                      "plan:JDDI1": {
+                        label: "Dental Insurance JDDI1",
+                        icon: "Plan.png",
+                        id:"6"
+                      },
+                      "plan:JDVI1": {
+                        label: "Vision Insurance JDVI1",
+                        icon: "Plan.png",
+                        id:"7"
+                      },
+                    },
+                  },
+                },
+              },
+              "person:briannen": {
+                label: "Briannen Storm",
+                icon: "Woman.png",
+                id:"8",
+                children: {
+                  "bs:plans": {
+                    label: "Plans",
+                    id:"9",
+                    children: {
+                      "plan:BSHI1": {
+                        label: "Health Insurance BSHI1",
+                        id:"10",
+                        icon: "Plan.png",
+                      },
+                      "plan:BSDI1": {
+                        label: "Dental Insurance BSDI1",
+                        id:"11",
+                        icon: "Plan.png",
+                      },
+                      "plan:BSVI1": {
+                        label: "Vision Insurance BSVI1",
+                        icon: "Plan.png",
+                        id:"12",
+                      },
+                      "plan:BSVI1": {
+                        label: "Vision Insurance BSVI1",
+                        icon: "Plan.png",
+                        id:"13",
+                      },
+                      "plan:BSVI1": {
+                        label: "Vision Insurance BSVI1",
+                        icon: "Plan.png",
+                        id:"14",
+                      },
+                    },
+                  },
+                },
+              },
+              "person": {
+                label: "Thomas Key",
+                icon: "Man.png",
+                id:"15",
+                children: {
+                  "group:KTplans": {
+                    label: "Plans",
+                    id:"16",
+                    children: {
+                      "plan:TKHI1": {
+                        label: "Health Insurance HI2",
+                        icon: "Plan.png",
+                        id:"17",
+                      },
+                      "plan:TKDI1": {
+                        label: "Dental Insurance DI2",
+                        icon: "Plan.png",
+                        id:"18",
+                      },
+                      "plan:TKVI1": {
+                        label: "Vision Insurance VI2",
+                        icon: "Plan.png",
+                        id:"19",
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      }
+  }
+  window.onload = function (e) {
+  let temp= document.getElementById('chart');
+    temp.setAttribute('data',JSON.stringify(TreeData))
+    console.log(temp);
+  };
+
 ```
 
-| CSS property          | Default value |
+| properties           | Default value |
 | --------------------- | ------------- |
-| --lt-background-color | #292929       |
-| --lt-border           | none          |
-| --lt-border-radius    | 2px           |
-| --lt-bottom           | 40px          |
-| --lt-color            | #dddddd       |
-| --lt-font-family      | sans-serif    |
-| --lt-font-size        | 1em           |
-| --lt-padding          | 16px          |
-| --lt-z-index          | 2             |
+| data                  | []
+| key                   | ""          |
+| value                 | ""           |
+
+
+#Events
+| Events                | Default value |
+| --------------------- | ------------- |
+| item-selected         | (param)=>{}

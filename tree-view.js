@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html, css } from 'https://unpkg.com/lit-element/lit-element.js?module';
 
 class Tree extends LitElement {
   static get styles() {
@@ -63,6 +63,7 @@ class Tree extends LitElement {
       value: { type: String },
       key: { type: String },
     };
+   
   }
 
   constructor() {
@@ -71,7 +72,7 @@ class Tree extends LitElement {
     this.imageBase = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/620300/";
     this.data = {};
     this.key = "id";
-    this.value = this.data[this.key];
+    this.value =this.data[this.key];
   }
 
   on(eventName, fn) {
@@ -151,10 +152,10 @@ class Tree extends LitElement {
     var detailNodes = node.querySelectorAll("DETAILS");
     detailNodes.forEach((node) => node.removeAttribute("open"));
   }
-  firstUpdated() {
+  firstUpdated(){
     this.on("select", (e) => {
-      return this.selectedItem(e.target.id);
-    });
+           return this.selectedItem(e.target.id)
+    })
   }
   select(id) {
     var check = this.shadowRoot.getElementById(id);
@@ -164,7 +165,7 @@ class Tree extends LitElement {
       this.shadowRoot.getElementById(id).click();
       this.selectedItem(id);
     } else {
-      console.log("id bwny nia", id);
+      console.log("id bwny nia",id);
     }
   }
 
@@ -178,6 +179,7 @@ class Tree extends LitElement {
   }
 
   updated() {
+    console.log(this.data);
     this.replaceData(this.data);
     if (this.value != "") {
       this.select(this.value);
@@ -185,9 +187,10 @@ class Tree extends LitElement {
     // this.appendData(this.physicians, "categories");
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback(name, oldValue, newValue){
     if (name == "value") this.value = new String(newValue);
     if (name == "key") this.key = newValue;
+    if (name == "data") {this.data = JSON.parse(newValue);}
   }
 
   render() {
@@ -195,4 +198,5 @@ class Tree extends LitElement {
   }
 }
 
-customElements.define('tree-view', Tree);
+customElements.define("tree-view", Tree);
+
