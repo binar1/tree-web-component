@@ -57,7 +57,7 @@ render() {
 
 ```
 
-## Styling
+## JS
 
 ```js
   var TreeData={
