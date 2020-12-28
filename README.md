@@ -45,13 +45,10 @@ constructor() {
 
 render() {
   return html`
-    <tree-component id="chart" key="id" value="1" ></tree-component>
+    <tree-view id="chart" key="id" value="1" ></tree-view>
   `;
 }
 
-_showToast() {
-  this.shadowRoot.querySelector('lit-toast').show("I'm a toast");
-}
 ```
 
 ## Styling
